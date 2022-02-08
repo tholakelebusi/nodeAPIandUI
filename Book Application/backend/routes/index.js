@@ -88,5 +88,18 @@ Books.findByIdAndRemove(req.params.id)
     .catch(error => console.error(error))
     });
 
-
+//get 1 item using id
+router.get('/books/:id', (req, res)=>
+{
+    Books.findById(req.params.id,(err,data)=>
+        {
+        if(!err)
+        {
+            res.send(data);
+        }
+        else{
+            console.log(err);
+        }
+    });
+});
     module.exports=router;

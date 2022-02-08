@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@material/grid-list": "^4.0.0",
-    "toastr": "^2.1.4"
-  }
-}
