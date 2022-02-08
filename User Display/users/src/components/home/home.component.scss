@@ -1,0 +1,33 @@
+button
+{
+    margin-top: 0.4cm;
+    height: 1cm;
+    width:8cm
+}
+    .button:hover {
+        transform: scale(1.07);
+}
+.container{
+    background-image:url("https://www.webpartner.co.za/images/bottombg.jpg");
+        }
+    
+        .card {
+      margin: 2cm;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+      transition: transform 100ms ease-in;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: scale(1.07);
+    } 
+
+h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+     color: #fff;
+  }
