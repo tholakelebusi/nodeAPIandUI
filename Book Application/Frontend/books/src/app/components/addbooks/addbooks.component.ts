@@ -54,14 +54,13 @@ onSubmit(): void {
           this.addform=false;
         this.addedalert=true;
           this.router.navigateByUrl('/');
-      },
-        (error) => {
-          console.log(
-            'Try to add again'
-          );
+      },(err) => {
+
+          this.addedalert=false;
+       
         }
       );
-  console.log(JSON.stringify(this.form.value, null, 2));
+ 
   
 }
 onReset(): void {

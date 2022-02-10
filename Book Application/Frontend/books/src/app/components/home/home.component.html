@@ -4,15 +4,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-<div class="alert" *ngIf="deletealert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+<div class="alert" *ngIf="deletealert"> 
   <strong>Book Deleted Successfully</strong> .
 </div>
 <div class="container">
   
   <div class="row">
     <div class="col-sm">
-     <div class="col align-self-end"></div> 
+     <div class="col align-self-end">
+       <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRjJMwVsAdLtMVGPY5BvJt35BRmZdq_HVx5A&usqp=CAU">
+     </div> 
     </div>
 
     <div class="col-sm">
@@ -46,7 +47,7 @@
 
 
 
-
+<br>
   <div class="container" id="">
     <div class="row">
     <table class="table table-sm">
@@ -62,7 +63,7 @@
       <tbody>
         <tr  *ngFor="let book of allbooks">
           
-          <td>  <img class="card-img-top" src={{book.image}} alt="Card image cap"></td>
+          <td>  <img class="card-img-top" src={{book.image}} alt="No Image"></td>
           <td>{{book.title}}</td>
           <td>{{book.author}}</td>
           <td>{{book.description}}</td>

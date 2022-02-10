@@ -26,13 +26,7 @@ export class HomeComponent implements OnInit {
     {
       this.allbooks=res;
       
-    }),
- 
-    this.router.events.subscribe(event =>{
-      if (event instanceof NavigationStart){
-   		
-      }
-   })
+    })
   }
 
   update(id:any)
