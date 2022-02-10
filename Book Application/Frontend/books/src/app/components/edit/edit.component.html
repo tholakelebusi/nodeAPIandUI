@@ -1,9 +1,8 @@
 <div class="alert" *ngIf="editalert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
     <strong>Edited Successfully</strong> .
   </div>
 
-<form #f="ngForm">
+<form #f="ngForm" *ngIf="editform">
     <h2>Edit Form</h2>
     <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="books.title">
     <div class="form-group">
@@ -27,6 +26,6 @@
       <input type="text" class="form-control" name="position"  #name="ngModel" [(ngModel)]="books.image"
        placeholder="Image URL">
     </div>
-    <button  mat-raised-button  (click)="save(books)">Save Book</button>
+    <button  class="btn btn-primary"  (click)="save(books)">Save Book</button>
   </form>
   

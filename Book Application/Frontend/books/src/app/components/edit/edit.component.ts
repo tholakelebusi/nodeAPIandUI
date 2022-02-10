@@ -9,6 +9,7 @@ import { BooksService } from 'src/app/service/books.service';
 export class EditComponent implements OnInit {
 books:any;
 editalert:boolean=false;
+editform:boolean=true
   constructor(private booksService:BooksService) { }
 
   ngOnInit(): void {
@@ -23,15 +24,15 @@ editalert:boolean=false;
 
   save(information:any)
   {
-
+    this.editform=false;
+    this.editalert=true;
+    
     this.booksService.updateBook(localStorage.getItem("id"),information).subscribe((res)=>
     {
-     this.editalert=true;
+     
     }
     );
     localStorage.clear();
-    // window.location.reload()
- 
   }
 
 

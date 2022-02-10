@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
 <div class="alert" *ngIf="addedalert">
-	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+	
 	<strong>Successfully Added to the database</strong> .
   </div>
 
@@ -71,9 +71,7 @@
 			 <div *ngIf="f['image'].errors['minlength']">
 				Image must be at least 6 characters
 			  </div>
-			  <div *ngIf="f['image'].errors['maxlength']">
-				Image must not exceed 40 characters
-			  </div>
+			  
 			</div>
 
 		  <div class="form-group">

@@ -41,7 +41,6 @@ export class HomeComponent implements OnInit {
     this.editform=true;
     this.addform=false;
 localStorage.setItem("id",id);
-this.editform=true;
 
   }
 

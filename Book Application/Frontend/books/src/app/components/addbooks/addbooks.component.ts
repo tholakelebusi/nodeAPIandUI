@@ -53,7 +53,6 @@ onSubmit(): void {
         (res) => {
           this.addform=false;
         this.addedalert=true;
-        window.location.reload()
           this.router.navigateByUrl('/');
       },
         (error) => {
