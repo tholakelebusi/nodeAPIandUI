@@ -1,0 +1,91 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+<div class="alert" *ngIf="addedalert">
+	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+	<strong>Successfully Added to the database</strong> .
+  </div>
+
+	<div class="form" *ngIf="addform">
+		<h2>Add Book</h2>
+		<form [formGroup]="form" (ngSubmit)="onSubmit()">
+		  <div class="form-group">
+			<label>Title</label>
+			<input
+			  type="text"
+			  formControlName="title"
+			  class="form-control"
+			  [ngClass]="{ 'is-invalid': submitted && f['title'].errors }"
+			/>
+			<div *ngIf="submitted && f['title'].errors" class="invalid-feedback">
+			  <div *ngIf="f['title'].errors['required']">Fullname is required</div>
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label>Author</label>
+			<input
+			  type="text"
+			  formControlName="author"
+			  class="form-control"
+			  [ngClass]="{ 'is-invalid': submitted && f['author'].errors }"
+			/>
+			</div>
+			<div *ngIf="submitted && f['author'].errors" class="invalid-feedback">
+			  <div *ngIf="f['author'].errors['required']">Username is required</div>
+			  <div *ngIf="f['author'].errors['minlength']">
+				Author must be at least 3 characters
+			  </div>
+			  <div *ngIf="f['author'].errors['maxlength']">
+				Author must not exceed 20 characters
+			  </div>
+			</div>
+		
+
+		  <div class="form-group">
+			<label>Description</label>
+			<input
+			  type="text"
+			  formControlName="description"
+			  class="form-control"
+			  [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"
+			/>
+			<div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
+			  <div *ngIf="f['description'].errors['required']">Description is required</div>
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label>Image</label>
+			<input
+			  type="text"
+			  formControlName="image"
+			  class="form-control"
+			  [ngClass]="{ 'is-invalid': submitted && f['image'].errors }"
+			/>
+			</div>
+			<div *ngIf="submitted && f['image'].errors" class="invalid-feedback">
+			  <div *ngIf="f['image'].errors['required']">Image is required</div>
+			 <div *ngIf="f['image'].errors['minlength']">
+				Image must be at least 6 characters
+			  </div>
+			  <div *ngIf="f['image'].errors['maxlength']">
+				Image must not exceed 40 characters
+			  </div>
+			</div>
+
+		  <div class="form-group">
+			<button type="submit" class="btn btn-primary" >Submit</button>
+			<button
+			  type="button"
+			  (click)="onReset()"
+			  class="btn btn-warning float-right"
+			>
+			  Reset
+			</button>
+		  </div>
+		</form>
+	  </div>
+    

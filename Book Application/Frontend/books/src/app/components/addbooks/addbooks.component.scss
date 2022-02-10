@@ -1,0 +1,22 @@
+.alert {
+    background-color: green;
+    color: white;
+    height: 1.5cm;
+    width:5cm;
+    margin-left:30%;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }

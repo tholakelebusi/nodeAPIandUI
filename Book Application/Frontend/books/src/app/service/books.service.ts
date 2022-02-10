@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
-import { BooksClass } from '../interface/books';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class BooksApiService {
+export class BooksService {
 
-  url: string ="http://localhost:3000/books";
+ url: string ="http://localhost:3000/books";
   constructor(private http: HttpClient) {}
   getAllBooks() {
     return this.http.get(this.url).pipe(
@@ -24,7 +22,7 @@ addNewBook(addDetails:any)
 }
 
 public updateBook(BookInformation_id:any,BookInformation:any){
-  return this.http.put<BooksClass>(`${this.url}/${BookInformation_id}`,BookInformation);
+  return this.http.put(`${this.url}/${BookInformation_id}`,BookInformation);
 }
 
 public deleteBook(id: any){

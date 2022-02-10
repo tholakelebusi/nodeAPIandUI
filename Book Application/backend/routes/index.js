@@ -40,39 +40,18 @@ router.post('/books', (req, res)=>
     });
 });
 
-
 //edit details of the book
-router.put('/books/:id', async(req, res)=>{
-    try{
-       const id = req.body._id;
-       const details= await Books.findOneAndUpdate({id:req.body._id},   
-        {"$set": {   
-       title:req.body.title,
-       author:req.body.author,
-       description:req.body.description,
-       image:req.body.image
-    }} )
-
-    if(!details){
-       return res.status(200).send({
-         status: 404,
-         message: 'No data find'
-       })
-    }
-    res.status(200).send({
-       status: 200,
-       message: 'Data Update Successfully'
-    })
-    }
-    catch(error){
-       console.log(error)
-       return res.status(400).send({
-         message:'Unable to update data',
-         errors: error,
-         status: 400
-       })
-    }
+router.put('/books/:id',(req, res)=>
+{
+    Books.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err,) {
+        if (err) return next(err);
+        res.send('Book udpated.');
     });
+    
+})
+
+
+
 
 
     //deleting selected book

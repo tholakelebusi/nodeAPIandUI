@@ -1,26 +1,29 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AddbooksComponent } from './components/addbooks/addbooks/addbooks.component';
+import { HomeComponent } from './components/home/home.component';
+import { AddbooksComponent } from './components/addbooks/addbooks.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditComponent } from './components/edit/edit.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AddbooksComponent
+    AddbooksComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-   
+    ReactiveFormsModule,
+  
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
