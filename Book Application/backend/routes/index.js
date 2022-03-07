@@ -2,10 +2,28 @@ const express=require('express');
 const router=express.Router();
 const fs = require("fs");
 const bodyParser=require('body-parser');
+var formidable = require('formidable');
 module.exports = router;
-
+const multer = require("multer");
+const upload = require('../model/picture');
+const Resize = require('../resize');
 const {Books}=require('../model/books.js');
 //get all books from the database.
+
+router.get('/', async function (req, res) {
+    await res.render('index');
+  });
+  
+  router.post('/post', upload.single('image'), async function (req, res) {
+    const imagePath = path.join(__dirname, '/public/images');
+    const fileUpload = new Resize(imagePath);
+    if (!req.file) {
+      res.status(401).json({error: 'Please provide an image'});
+    }
+    const filename = await fileUpload.save(req.file.buffer);
+    return res.status(200).json({ image: filename });
+  });
+
 
 router.get('/books', (req, res)=>
 {
